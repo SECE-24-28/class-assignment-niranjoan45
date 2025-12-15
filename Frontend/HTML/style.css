@@ -1,0 +1,20 @@
+h1{
+    color: forestgreen;
+    background-color: aqua;
+    border-width: 20px;
+    border-style: dotted;
+    border-color: blue;
+}
+div{
+    width: 100px;
+    border: 1px solid red;
+    background-color: blue;
+    display: block;
+    font-size: 30px;
+    padding: 1rem 0 0 4rem;
+ 
+}
+
+hi{
+    text-align: left;
+ }

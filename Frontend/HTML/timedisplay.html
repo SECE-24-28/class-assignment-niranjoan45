@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Full Screen Clock</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        overflow: hidden;
+    }
+
+    .left {
+        width: 50%;
+        background: black;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18vw;
+        font-weight: bold;
+    }
+
+    .right {
+        width: 50%;
+        background: #D9FF00; 
+        color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        font-size: 28vw;
+        font-weight: bold;
+    }
+
+    .pm {
+        font-size: 6vw;
+        margin-top: -5vw;
+    }
+</style>
+</head>
+
+<body>
+    <div class="left" id="time"></div>
+
+    <div class="right">
+        <div id="sec"></div>
+        <div class="pm" id="ap"></div>
+    </div>
+
+<script>
+function updateClock() {
+    let now = new Date();
+
+    let hr = now.getHours();
+    let min = now.getMinutes();
+    let sec = now.getSeconds();
+
+    let ampm = hr >= 12 ? "PM" : "AM";
+    hr = hr % 12;
+    hr = hr ? hr : 12;
+
+    document.getElementById("time").innerText =
+        hr.toString().padStart(2, "0") + ":" + min.toString().padStart(2, "0");
+
+    document.getElementById("sec").innerText =
+        sec.toString().padStart(2, "0");
+
+    document.getElementById("ap").innerText = ampm;
+}
+
+setInterval(updateClock, 1000);
+updateClock();
+</script>
+
+</body>
+</html>

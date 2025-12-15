@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation & Transistion</title>
+
+<body>
+    <div id = "animation"></div>
+    <div id = "transition"></div>
+    <style>
+        body{
+            display : flex;
+            justify-content: center;
+        }
+
+        #animation,
+        #transition  {
+            margin: 1rem;
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+        #animation:hover{
+            animation-name: colorChange;
+            animation-duration: 3000ms;
+        }
+        #transition{
+            transition-property: width;
+            transition-duration: 3000ms;
+            transition-timing-function: ease-in-out;
+        }
+        #transition:hover{
+            width:300px;
+        }
+
+        @keyframes colorChange{
+            from{
+                color: blue;
+            }
+            to{
+                color: red;
+            }
+        }
+
+        @keyframes width{
+            from{
+                width:100px;
+            }
+            to{
+                width:1000px;
+            }
+        }
+    </style>
+</head>    
+</body>
+</html>
